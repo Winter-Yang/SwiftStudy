@@ -20,9 +20,8 @@ class myViewController: BaseViewController {
         self.leftButton(nil, hlIimage: nil, title: "返回", size: CGSize(width: 38, height: 30), action: "buttonClick", target: self)
         
         
-        
-        
-         var dic:Dictionary<String,String> = ["appID":"621617408418775040","idfa":"A79F5A5E-4102-4BFB-9B20-48C3A058C55A","pageTime":"0","section":"7","token":"ab9e220cb716bb2942edc3ecd94cbb6a"];
+
+         var dic:Dictionary<String,String> = ["a":"1","b":"2"];
         
         var getUrl:String = "http://m.weather.com.cn/atad/101190101.html"
         //post测试

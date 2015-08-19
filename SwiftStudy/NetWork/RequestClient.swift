@@ -20,7 +20,8 @@ class RequestClient: AFHTTPSessionManager {
         
         dispatch_once(&Static.onceToken, { () -> Void in
 
-            var url:NSURL = NSURL(string: "http://113.31.129.150:9988")!
+            //在这里设置你的baseURl
+            var url:NSURL = NSURL(string: "")!
             Static.instance = RequestClient(baseURL: url)
         })
         return Static.instance!
