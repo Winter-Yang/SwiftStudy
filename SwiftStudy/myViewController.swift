@@ -16,30 +16,30 @@ class myViewController: BaseViewController {
         
         self.view.backgroundColor = UIColor.brownColor()
 
-        var image:UIImage
+        var _:UIImage
         self.leftButton(nil, hlIimage: nil, title: "返回", size: CGSize(width: 38, height: 30), action: "buttonClick", target: self)
         
         
 
-         var dic:Dictionary<String,String> = ["a":"1","b":"2"];
+//         let dic:Dictionary<String,String> = ["a":"1","b":"2"];
         
-        var getUrl:String = "http://m.weather.com.cn/atad/101190101.html"
+//        let getUrl:String = "http://m.weather.com.cn/atad/101190101.html"
         //post测试
-        RequestAPI.POST("getRechargeList", body: dic, succeed: succeed, failed:failed)
+//        RequestAPI.POST("getRechargeList", body: dic, succeed: succeed, failed:failed)
         //get测试
         RequestAPI.GET("http://m.weather.com.cn/atad/101190101.html", body: nil, succeed: succeed, failed: failed)
         
-        //文件上传
-        RequestAPI.uploadImage("http://m.weather.com.cn/atad/101190101", body: nil, imagePath: "file://sdnfnsdf.sfhsh.png", succeed: succeed, failed: failed)
-        // Do any additional setup after loading the view.
+//        //文件上传
+//        RequestAPI.uploadImage("http://m.weather.com.cn/atad/101190101", body: nil, imagePath: "file://sdnfnsdf.sfhsh.png", succeed: succeed, failed: failed)
+//        // Do any additional setup after loading the view.
     }
 
     func succeed(task:NSURLSessionDataTask!,responseObject:AnyObject!)->Void{
-        println("qwwqweqe+\(responseObject)")
+        print("qwwqweqe+\(responseObject)")
     }
     
     func failed(task:NSURLSessionDataTask!,error:NSError!)->Void{
-        println("失败了")
+        print("失败了")
     }
     
 
