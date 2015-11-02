@@ -43,19 +43,19 @@ class CostomNavigationVC: UINavigationController {
     }
     
     func setBackImage(){
-        var backImage:UIImage! = self.imageWithColor(hexRGB(0x00a0ff))
+        let backImage:UIImage! = self.imageWithColor(hexRGB(0x00a0ff))
         self.navigationBar.setBackgroundImage(backImage, forBarMetrics:UIBarMetrics.Default)
     }
     
     
     func imageWithColor(color:UIColor) ->UIImage{
         
-        var rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
-        var contrxt:CGContextRef! = UIGraphicsGetCurrentContext()
+        let contrxt:CGContextRef! = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(contrxt, color.CGColor)
         CGContextFillRect(contrxt, rect)
-        var theImage = UIGraphicsGetImageFromCurrentImageContext()
+        let theImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return theImage
     }
@@ -63,7 +63,7 @@ class CostomNavigationVC: UINavigationController {
     //设置不可点击的titleView
     func setTitle(title:String, hasbadge:Bool){
         
-        var titleLabel:UILabel! = UILabel()
+        let titleLabel:UILabel! = UILabel()
         var frame = titleLabel.frame
         frame.size.width = frame.size.width + 50
         frame.size.height = frame.size.height + 10
@@ -76,19 +76,19 @@ class CostomNavigationVC: UINavigationController {
         titleLabel.sizeToFit()
 
         if(NSArray(array: self.viewControllers).lastObject != nil){
-            var vc:UIViewController = self.viewControllers.last as! UIViewController
+            let vc:UIViewController = self.viewControllers.last! as UIViewController
             vc.navigationItem.titleView = titleLabel
         }
     }
     
     //设置可点击的titleView
     func setTitle(title:String, action:Selector, target:AnyObject){
-        var frame:CGRect = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 44.0)
-        var foneSize:CGFloat = 12
+        let frame:CGRect = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 44.0)
+        let foneSize:CGFloat = 12
 
-        var button:UIButton  = self.buttonCreat(frame, title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage:UIImage(), hightImage:UIImage(), fonsize: foneSize)
+        let button:UIButton  = self.buttonCreat(frame, title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage:UIImage(), hightImage:UIImage(), fonsize: foneSize)
         if(NSArray(array: self.viewControllers).lastObject != nil){
-            var vc:UIViewController = self.viewControllers.last as! UIViewController
+            let vc:UIViewController = self.viewControllers.last! as UIViewController
             vc.navigationItem.titleView = button
         }
    
@@ -96,14 +96,14 @@ class CostomNavigationVC: UINavigationController {
     
     //左按钮
     func leftButton(image:UIImage ,hightImage:UIImage, size:CGSize , action:Selector ,target:AnyObject){
-        var frame:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
-        var foneSize:CGFloat = 12
+        let frame:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        let foneSize:CGFloat = 12
         if image != NSNull() {
             
-            var leftButton = self.buttonCreat(frame, title: "", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image, hightImage: hightImage, fonsize: foneSize)
+            _ = self.buttonCreat(frame, title: "", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image, hightImage: hightImage, fonsize: foneSize)
         }else{
           
-            var leftButton = self.buttonCreat(frame, title: "", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image, hightImage: hightImage, fonsize: foneSize)
+            _ = self.buttonCreat(frame, title: "", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image, hightImage: hightImage, fonsize: foneSize)
         }
     }
     
@@ -118,7 +118,7 @@ class CostomNavigationVC: UINavigationController {
                      hightImage:UIImage,
                      fonsize:CGFloat)->UIButton{
         
-        var button:UIButton! = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let button:UIButton! = UIButton(type: UIButtonType.Custom);// UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         button.frame = frame
         button.backgroundColor = UIColor.clearColor()
         button.titleLabel?.font = UIFont.systemFontOfSize(fonsize)

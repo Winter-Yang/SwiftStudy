@@ -30,17 +30,17 @@ class BaseViewController: UIViewController {
 
     //设置NavigationBar TitleView
     func titleView(image:UIImage,title:String){
-        var customView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 27))
+        let customView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 27))
         customView.center = CGPoint(x: kDeviceWidth()/2-2, y: 20)
         customView.backgroundColor = UIColor.clearColor()
         if image != NSNull(){
-            var aa:UIImageView = UIImageView(frame: CGRect(x: 0, y: 2, width:222, height: 25))
+            let aa:UIImageView = UIImageView(frame: CGRect(x: 0, y: 2, width:222, height: 25))
             aa.image = image
             aa.userInteractionEnabled = true
             customView.addSubview(aa)
             self.navigationItem.titleView = customView
         }else if title != NSNull(){
-            var aa:UILabel = UILabel(frame: CGRect(x: 0, y: 2, width: 150, height: 25))
+            let aa:UILabel = UILabel(frame: CGRect(x: 0, y: 2, width: 150, height: 25))
             aa.userInteractionEnabled = true
             aa.text = title
             aa.textAlignment = NSTextAlignment.Center
@@ -57,14 +57,14 @@ class BaseViewController: UIViewController {
     func leftButton(image:UIImage?,hlIimage:UIImage?,title:String,size:CGSize,action:Selector,target:AnyObject){
         
         if image != nil{
-            var fonesize:CGFloat = 0
-            var leftNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:"", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image!, hightImage: hlIimage!, fonsize:fonesize)
-            var sendButtonItem = UIBarButtonItem(customView: leftNavButton)
+            let fonesize:CGFloat = 0
+            let leftNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:"", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image!, hightImage: hlIimage!, fonsize:fonesize)
+            let sendButtonItem = UIBarButtonItem(customView: leftNavButton)
             self.navigationItem.leftBarButtonItem = sendButtonItem
         }else{
-            var fonesize:CGFloat = 15
-            var leftNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: UIImage(), hightImage: UIImage(), fonsize:fonesize)
-            var sendButtonItem = UIBarButtonItem(customView: leftNavButton)
+            let fonesize:CGFloat = 15
+            let leftNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: UIImage(), hightImage: UIImage(), fonsize:fonesize)
+            let sendButtonItem = UIBarButtonItem(customView: leftNavButton)
             self.navigationItem.leftBarButtonItem = sendButtonItem
         }
         
@@ -75,14 +75,14 @@ class BaseViewController: UIViewController {
     func rightButton(image:UIImage?,hlIimage:UIImage?,title:String,size:CGSize,action:Selector,target:AnyObject){
         
         if image != nil{
-            var fonesize:CGFloat = 0
-            var rightNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:"", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image!, hightImage: hlIimage!, fonsize:fonesize)
-            var sendButtonItem = UIBarButtonItem(customView: rightNavButton)
+            let fonesize:CGFloat = 0
+            let rightNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:"", alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: image!, hightImage: hlIimage!, fonsize:fonesize)
+            let sendButtonItem = UIBarButtonItem(customView: rightNavButton)
             self.navigationItem.rightBarButtonItem = sendButtonItem
         }else{
-            var fonesize:CGFloat = 15
-            var rightNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: UIImage(), hightImage: UIImage(), fonsize:fonesize)
-            var sendButtonItem = UIBarButtonItem(customView: rightNavButton)
+            let fonesize:CGFloat = 15
+            let rightNavButton = self.buttonCreat(CGRectMake(0,0,size.width, size.height), title:title, alignment: NSTextAlignment.Center, target: target, myaction: action, normalImage: UIImage(), hightImage: UIImage(), fonsize:fonesize)
+            let sendButtonItem = UIBarButtonItem(customView: rightNavButton)
             self.navigationItem.rightBarButtonItem = sendButtonItem
         }
         
@@ -95,7 +95,7 @@ class BaseViewController: UIViewController {
     //button创建
     func buttonCreat(frame:CGRect,title:String,alignment:NSTextAlignment,target:AnyObject ,myaction:Selector,normalImage:UIImage,hightImage:UIImage,fonsize:CGFloat)->UIButton{
             
-            var button:UIButton! = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let button:UIButton! = UIButton(type: UIButtonType.Custom);
             button.frame = frame
             button.backgroundColor = UIColor.clearColor()
             button.titleLabel?.font = UIFont.systemFontOfSize(fonsize)

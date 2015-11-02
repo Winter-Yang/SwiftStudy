@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = hexRGB(0xaa00ed)
 
         
-        var image:UIImage = UIImage()
+//        var image:UIImage = UIImage()
         
         // Do any additional setup after loading the view, typically from a nib.
     }

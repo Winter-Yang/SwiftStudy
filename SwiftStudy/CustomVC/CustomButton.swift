@@ -18,15 +18,15 @@ class CustomButton: UIButton {
     
     
     override func imageRectForContentRect(contentRect: CGRect) -> CGRect {
-        var imageW:CGFloat = contentRect.size.width
-        var imageH:CGFloat = contentRect.size.height
+        let imageW:CGFloat = contentRect.size.width
+        let imageH:CGFloat = contentRect.size.height
         return CGRectMake(0, 5, imageW, imageH)
     }
 
     override func titleRectForContentRect(contentRect: CGRect) -> CGRect {
-        var titleY:CGFloat = contentRect.size.height * 0.7
-        var titleW:CGFloat = contentRect.size.width
-        var titleH:CGFloat = contentRect.size.height - titleW
+        let titleY:CGFloat = contentRect.size.height * 0.7
+        let titleW:CGFloat = contentRect.size.width
+        let titleH:CGFloat = contentRect.size.height - titleW
         return CGRectMake(0, titleY, titleW, titleH);
     }
     
